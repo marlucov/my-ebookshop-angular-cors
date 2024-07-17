@@ -1,0 +1,24 @@
+<table>
+  <tr *ngFor="let book of books">
+    <td>
+      Book title:&nbsp;{{book.title}}
+    </td>
+    <td>
+      {{book.price | number: '1.2-2'}}
+    </td>
+    <td>
+      <button type="button" (click)="onClickRemoveBook(book.id)">
+        REMOVE
+      </button>
+    </td>
+  </tr>
+</table>
+<br>
+<div>
+  <span>
+    Total order:
+  </span>
+  <span>
+    {{orderAmount | number: '1.2-2'}}
+  </span>
+</div>

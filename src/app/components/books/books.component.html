@@ -1,0 +1,7 @@
+<app-book *ngFor="let book of books" [book]="book" [booksComponent]="self"></app-book>
+<div class="outer-container" [hidden]="isNotOnShuffle">
+  <div class="container">
+    <iframe [src]="bookPagesUrl" width="95%" height="100%"></iframe>
+    <button type="button" class="my-button" (click)="onClickCloseShuffle()">Close</button>
+  </div>
+</div>

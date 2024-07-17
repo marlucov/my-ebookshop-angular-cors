@@ -1,0 +1,52 @@
+<table cellspacing="0">
+  <tr>
+    <td>
+      <ul class="no-bullets">
+        <li>
+          <mat-form-field>
+            <mat-label>Title</mat-label>
+            <input matInput (input)="onInputTitle()" [(ngModel)]="bookToInsert.title" list="data-title">
+            <datalist id="data-title">
+              <option *ngFor="let obj of items[keyBook]?.list" value={{obj.id}}>
+                {{obj.value}}
+              </option>
+            </datalist>
+          </mat-form-field>
+        </li>
+        <li *ngFor="let key of items[keyBook]?.simpleKeys">
+          <mat-form-field>
+            <mat-label>{{key}}</mat-label>
+            <input matInput (input)="onInputInsertValidator()"
+              [formControl]="inputForm[makeKey(keyBook, key)]">
+          </mat-form-field>
+        </li>
+      </ul>
+    </td>
+    <td *ngFor="let keyForm of keysLessBook">
+      <ul class="no-bullets">
+        <li>
+          <mat-form-field>
+            <mat-label>{{items[keyForm]?.label}}</mat-label>
+            <input matInput (input)="onInput(keyForm)" [formControl]="inputForm[keyForm]"
+              [attr.list]="'data-' + keyForm">
+            <datalist [id]="'data-' + keyForm">
+              <option *ngFor="let obj of items[keyForm]?.list" value={{obj.id}}>
+                {{obj.value}}
+              </option>
+            </datalist>
+          </mat-form-field>
+        </li>
+        <li *ngFor="let key of items[keyForm]?.simpleKeys">
+          <mat-form-field>
+            <mat-label>{{key}}</mat-label>
+            <input matInput (input)="onInputInsertValidator()"
+              [formControl]="inputForm[makeKey(keyForm, key)]">
+          </mat-form-field>
+        </li>
+      </ul>
+    </td>
+  </tr>
+</table>
+<button mat-button [disabled]="insertButton.disabled" (click)="onClickInsert()">
+  Insert Book
+</button>

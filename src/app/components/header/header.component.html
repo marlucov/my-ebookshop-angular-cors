@@ -1,0 +1,31 @@
+<mat-toolbar style="background-color: #C2185B">
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon"
+    routerLink={{home.link}}>
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span style="margin-left: 1.2em; margin-right: 1.2em;">My App</span>
+  <a mat-button routerLink={{home.link}}>
+    <h1>{{home.label}}</h1>
+  </a>
+  <a mat-button routerLink={{books.link}}>
+    <h1>{{books.label}}</h1>
+  </a>
+  <a mat-button routerLink={{users.link}}>
+    <h1>{{users.label}}</h1>
+  </a>
+  <span class="my-spacer"></span>
+  <a mat-button routerLink={{insertBook.link}}>
+    <h1>{{insertBook.label}}</h1>
+  </a>
+  <span class="example-spacer"></span>
+  <a style="margin-right: 1.5em;" routerLink={{cart.link}}>
+    <mat-icon class="material-symbols-outlined">
+      {{cart.label}}
+    </mat-icon>
+  </a>
+  <a mat-button routerLink={{logout.link}}>
+    <h1>{{logout.label}}</h1>
+  </a>
+</mat-toolbar>
+<!-- -->
+<router-outlet />

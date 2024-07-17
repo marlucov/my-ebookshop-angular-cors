@@ -1,0 +1,38 @@
+table {
+  table-layout: fixed;
+  width: 500px;
+}
+
+td {
+  text-align: right;
+}
+
+tr>td:first-child {
+  width: 70%;
+  text-align: left;
+  text-indent: 0.5em;
+}
+
+tr>td:nth-child(2) {
+  width: 14%;
+}
+
+tr>td:nth-child(3) {
+  width: 16%;
+}
+
+div {
+  margin-left: 1em;
+}
+
+div>span:nth-child(2) {
+  margin-left: .3em;
+  font-weight: 800;
+}
+
+button {
+  border-radius: 14% / 50%;
+  background-color: blue;
+  color: white;
+  padding-top: .2em;
+}
